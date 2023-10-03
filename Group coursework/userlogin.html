@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+               *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins';
+            font-weight: normal;
+            transition: .3s;
+        }
+            :root{
+            --semi-light: rgb(209, 226,241);
+            --bg-dark: #252A4A;
+            --bg-very-dark: #202342;
+            --bg-light: #343965;
+            --blue: #36A7FD;
+        --purple: #824AFE;
+            }
+            body{
+                background: linear-gradient(rgba(209, 226, 241, 0.948),rgb(209, 226, 241)), url(./icons/companyLogo.svg);
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--bg-very-dark);
+                overflow: hidden;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            .img{
+                width: 20px;
+                margin:0 20px;
+            }
+            input{
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+            .password-container{
+                background-color: rgba(240, 248, 255, 0.737);
+                width: 300px;
+                height: 40px;
+                display: flex;
+                transform: translateZ(200px);
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+                border-radius: 5px;
+            }
+            .uname{
+                background-color: rgba(240, 248, 255, 0.737);
+                border-radius: 5px;
+                transform: translateZ(200px);
+                width: 300px;
+                height: 40px;
+                padding: 0 20px;
+            }
+            .space{
+                margin: 30px 0px;
+            }
+           h3{
+            text-align: center;
+            color: var(--blue);
+            font-weight: bold;
+            font-family: poppins;
+            font-weight: normal;
+            letter-spacing: 5px;
+            font-size: .94rem;
+           }
+           .main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 55%;
+           }
+           .log{
+            background-color: var(--blue);
+            height: 40px;
+            border-radius: 4px;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+           }
+           input[type = reset]{
+            background-color: var(--bg-light);
+            height: 40px;
+            border-radius: 4px;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 340px;
+            font-size: .9rem;
+            color: aliceblue;
+           }
+           input[type = submit]{
+            font-size: .9rem;
+            color: aliceblue;
+            height: 100%;
+
+            width: 70%;
+           }
+           .center{
+            text-align: center;
+            text-decoration: underline;
+            font-size: .9rem;
+           }
+           .copy{
+            opacity: .6;
+           }
+           .username, .password{
+            transform: translate(20px, 33px);
+           }
+           .password-move{
+            transform: translate(0,-10px);
+           }
+           .brighten{
+            background-color: aliceblue;
+           }
+           .error{
+            border: 1px solid #FF4C87;
+            
+           }
+           #error{
+            color: #FF4C87;
+            width: 300px;
+            font-size: .6rem;
+           }
+           #pass-input{
+            height: 100%;
+            width: 260px;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div>
+                <h3>PAVILIONEE MAILING COMAPNY</h3>
+            </div>
+            <form action="userlogin.php" class="sub-container" onsubmit="inputcheck()" method="post" autocomplete="off">
+                <div class="space">
+                    <p class="username">Username</p>
+                <input type="text" class="uname" oninput="movename()" name="username">
+                </div>
+             <div class="space">
+                <p class="password">
+                    Password
+                </p>
+                    <div class="password-container">
+                        <input type="password" id="pass-input" oninput="movepassword()" name="password">
+                        <img src="./images/eye.svg" alt="" class="img" id="eye">
+                    </div>
+             </div>
+             <div class="space">
+              <div class="log">
+                <input type="submit" value="Log In" name="submit">
+                <img src="./images/arrow-right-long.svg" alt="" class="img">
+              </div>
+             </div>
+             <div class="space">
+                <input type="reset" onclick="remove()" value="Clear all fields">
+             </div>
+             <div class="space">
+                <p class="center">forgot password</p>
+             </div>
+                
+            </form>
+            <div class="space copy">
+                <p>2023 &copy; pavilioneemailingcompany.co.ug</p>
+            </div>
+            
+        </div>
+    </body>
+    </html>
+    <script>
+        const passContainer = document.querySelector('.password-container')
+        function movepassword(){
+        const password = document.querySelector('.password')
+        const passInput = document.querySelector('.password-container')
+        password.classList.add('password-move')
+        passInput.classList.add('brighten')
+        }
+        function movename(){
+            const passInput = document.querySelector('.uname')
+            const username = document.querySelector('.username')
+            username.classList.add('password-move')
+            passInput.classList.add('brighten')
+        }
+        const eye = document.getElementById("eye")
+        const passInput = document.getElementById('pass-input')
+    eye.addEventListener("click", ()=>{
+        if(passInput.type === 'password'){
+            passInput.type = 'text'
+            eye.src = "./icons/eye-slash.svg"
+        }
+        else if(passInput.type === 'text'){
+            passInput.type = 'password'
+            eye.src = "./icons/eye.svg"
+        }
+    })
+    function inputcheck(){
+        const userName = document.querySelector('.uname')
+        if((passInput.value).length < 4){
+            const passContainer = document.querySelector('.password-container')
+            const userName = document.querySelector('.uname')
+            event.preventDefault()
+            alert('password must be of alteast 4 characters')
+            passContainer.classList.add("error")
+            
+        }
+        if((userName.value).length < 4){
+            
+            event.preventDefault()
+            alert('please input your username')
+            userName.classList.add("error")
+            
+        }
+  
+
+    }
+    function remove(){
+            userName.classList.remove("error")
+            passContainer.classList.remove("error")
+        }
+    </script>
+</body>
+</html>

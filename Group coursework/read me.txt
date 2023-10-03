@@ -1,0 +1,20 @@
+adminstrator 
+ username: administrator
+ password: 1234
+
+
+user:
+	wilfred kato
+	wilfred
+
+
+database installation
+	1. go to the phpMyAdmin panel
+	2. create a new database called "coursework1"
+	3. click on import on the phpMyAdmin panel navigation
+	4. click on choose file and browse to the coursework1.sql file in this folder
+	5. click go, and the database will be installed
+
+paste the Group coursework folder in the root directory for your server and open it from the browser
+
+

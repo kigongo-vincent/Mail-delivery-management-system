@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .img{
+                height: 40px;
+                margin:0px 20px;
+            }
+            .dull{
+                opacity: .5;
+                font-weight: lighter;
+            }
+            a:link{
+                color: aliceblue;
+                text-decoration: none;
+            }
+            a:visited{
+                color: aliceblue;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: poppins;
+            }
+            body{
+                background: linear-gradient(rgba(209, 226, 241, 0.948),rgb(209, 226, 241)), url(./icons/companyLogo.svg);
+                background-size: cover;
+                background-position: center;
+                color: black;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+            }
+            .video-container{
+                width: 500px;
+                height: 250px;
+                overflow: hidden;
+                border-radius: 6px;
+                border: 1px solid #824AFE;
+            }
+            .main-container{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .user{
+                height: 80px;
+                width: 246px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                margin-right: 4px;
+            }
+            :not(input){
+                cursor:  pointer;
+            }
+            .user{
+                background-color: #252A4A;
+                font-size: 1rem;
+            }
+            .usera{
+                background-color: #824AFE;
+                font-size: 1rem;
+            }
+            video{
+                width: 530px;
+                transform: translate(-30px, -30px);
+            }
+            .users{
+                display: flex;
+                justify-content: space-between;
+            }
+            h3{
+                font-weight: lighter;
+            }
+            h2{
+                letter-spacing: 2px;
+                font-weight: normal;
+                font-size: 1rem;
+            }
+            .m{
+                color: #824AFE;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <img src="./icons/companyLogo.svg" alt="" class="img">
+            <h2>PAVILIONEE <span class="m">MAILING</span> COMPANY</h2>
+            <p class="dull">The best mail management software</p>
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="./Delivery_Service_Animation_Video(1080p).mp4">
+                </video>
+            </div>
+            <h3>Log In As</h3>
+            <div class="users">
+               <a href="adminlogin.html">
+                <div class="user">
+                    <img src="./images//user.svg" alt="" class="img">
+                    <h3>Administrator</h3>
+                </div>
+               </a>
+               <a href="./userlogin.html">
+                <div class="user usera">
+                    <img src="./images/user-group.svg" alt="" class="img">
+                    <h3>Staff</h3>
+                </div>
+               </a>
+            </div>
+            <p class="dull">2023&copy; pavilioneemailingcompany@co.ug</p>
+        </div>
+    </body>
+    </html>
+</body>
+</html>
